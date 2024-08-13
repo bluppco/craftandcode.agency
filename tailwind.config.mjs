@@ -51,6 +51,10 @@ module.exports = {
 			},
 			fontFamily: {
 
+				"good_sans": [ "Good Sans", "sans-serif" ],
+				"gyst_variable": [ "gyst-variable", "sans-serif" ],
+				"neue_haas_grotesk_display": [ "neue-haas-grotesk-display", "sans-serif" ],
+				"work_sans": [ "work-sans", "sans-serif" ],
 
 			}
 
