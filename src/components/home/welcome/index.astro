@@ -1,0 +1,29 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import ContainerSmall from "@/layouts/container-small/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingTwoLgLightWhite from "@/atoms/headings/two/lg/light/white/index.astro"
+import Paragraph4XlWhite from "@/atoms/paragraphs/4xl/leading-relaxed/white/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    description: "We’re the Do Good Sh*t Agency. Orlando’s #1 rated marketing agency. We’re daring, our work is inspiring, and we’re motivated to Do Good Sh*t in a uniquely and unapologetic way for the success of our clients and partners.",
+    title: "Welcome to Craft+Code",
+
+}
+
+---
+
+<section class="bg-dark_neutral">
+    <div class="bg-[url('/images/dot-background.webp')] bg-fixed bg-repeat h-full py-20">
+        <ContainerSmall>
+            <div class="flex flex-col gap-6 justify-center">
+                <HeadingTwoLgLightWhite>{ data.title }</HeadingTwoLgLightWhite>
+                <Paragraph4XlWhite>{ data.description }</Paragraph4XlWhite>
+            </div>
+        </ContainerSmall>
+    </div>
+</section>
