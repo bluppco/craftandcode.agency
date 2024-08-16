@@ -1,0 +1,48 @@
+---
+
+//IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import ButtonPrimary from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+import Paragraph3xlLeadingsnug from "@/atoms/paragraphs/3xl/leading-snug/index.astro"
+import Paragraph3xlLeadingRelaxed from "@/atoms/paragraphs/3xl/leading-relaxed/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    button_link:"/about/",
+    button_text:"About Craft + Code",
+    description:"We’re proud to be unique. We’re always open about how we can help you, and always do what we say. No gimmicks, tricks, or fancy jargon. Simply the best in brand design, custom built websites, and carefully crafted digital ad campaigns.",
+    icon_source:"./public/icons/arrow.svg",
+    title:"An Orlando marketing agency with a handful of goals"
+
+}
+
+---
+<section class="py-20 bg-gray-100 px-10">
+    <Container>
+        <div class="flex flex-col gap-14 md:flex-none md:grid md:grid-cols-2 md:gap-10">
+            <div>
+                <Paragraph3xlLeadingRelaxed>{ data.title }</Paragraph3xlLeadingRelaxed>
+            </div>
+            <div class="space-y-6">
+                <Paragraph3xlLeadingsnug>{ data.description }</Paragraph3xlLeadingsnug>
+                <div>
+                    <Link aria_label={ data.button_text } href={ data.button_link }>
+                        <ButtonPrimary>{ data.button_text }
+                            <span class="inline-block size-5 -rotate-45 ml-2">
+                                <PictureInternal
+                                    alternative_text={ data.title }
+                                    source={ data.icon_source }
+                                />
+                            </span>
+                        </ButtonPrimary>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
