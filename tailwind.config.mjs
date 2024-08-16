@@ -1,3 +1,5 @@
+import { transform } from 'framer-motion';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 
@@ -38,11 +40,26 @@ module.exports = {
           			to: { height: "0" },
 
 				},
+				"slide-left": {
+
+					from: { transform: "translateX(0)" },
+					to: { transform: "translateX(-100%)" }
+
+				},
+				"slide-right": {
+
+					from: { transform: "translateX(-100%)" },
+					to: { transform: "translateX(0)" }
+
+				},
+				
       		},
       		animation: {
 
 				"accordion-down": "accordion-down 0.2s ease-out",
         		"accordion-up": "accordion-up 0.2s ease-out",
+				"slide-left": "slide-left 25s infinite linear",
+				"slide-right": "slide-right 25s infinite linear",
 
 			},
 			colors: {
