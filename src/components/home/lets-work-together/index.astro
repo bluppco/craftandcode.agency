@@ -1,0 +1,43 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Link from "@/atoms/links/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    link: "/",
+    title: "Let's Work Together",
+
+}
+
+---
+
+<Link href={data.link}>
+    <section class="bg-white hover:bg-light_green duration-300 py-28">
+        <div class="space-y-10">
+            {
+            
+                [ ...Array(2) ].map( (_, rowIndex ) => (
+
+                    <div class="flex gap-16 md:gap-24 overflow-hidden">
+                        {
+                        
+                            [ ...Array(2) ].map( () => (
+
+                                <div class={`flex gap-16 md:gap-24 items-center whitespace-nowrap animate-slide-${ rowIndex % 2 === 0 ? 'left' : 'right' }`}>
+                                    <p class="text-7xl md:text-[160px] font-semibold font-good_sans">{ data.title }</p>
+                                    <p class="text-7xl md:text-[160px] font-semibold font-good_sans">{ data.title }</p>
+                                </div>
+
+                            ))
+                        
+                        }
+                    </div>
+
+                ))
+            
+            }
+        </div>
+    </section>
+</Link>
