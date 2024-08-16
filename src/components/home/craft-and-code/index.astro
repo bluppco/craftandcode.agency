@@ -1,0 +1,78 @@
+---
+
+//IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingTwo9xl from "@/atoms/headings/two/9xl/light/center/index.astro"
+import HeadingThreeExtraLargeBoldItalicCenter from "@/atoms/headings/three/xl/bold/italic/center/index.astro"
+import Link from "@/atoms/links/index.astro"
+import Paragraph3xlLeadingRelaxedCenter from "@/atoms/paragraphs/3xl/leading-relaxed/center/index.astro"
+import ParagraphBaseUppercaseLightCenter from "@/atoms/paragraphs/base/uppercase/light/center/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// CODE ARRAY
+const code = [
+
+    {
+        description1:"We capture the truest story about your organization and it’s audience to bring a shared vision to reality through memorable brand & website design, and revenue generating marketing campaigns.",
+        description2:"Featured Case Study • Design • 9am Health",
+        link:"/work/tous-les-jours-copy/",
+        source:"/craft.webp",
+        sub_title:"BRAND STRATEGY & IDENTITY, WEBSITE DESIGN, DIGITAL MARKETING CAMPAIGNS",
+        title:"Craft"
+    },
+    {
+        description1:"From custom websites and intuitive CMS capabilities to no-code marketing tools, we plan, craft+code, digital experiences that bring your goals to life.",
+        description2:"Featured Case Study • Code • MUSH",
+        link:"/work/mush/",
+        source:"/code.webp",
+        sub_title:"WEBSITE DEVELOPMENT AND SEO",
+        title:"Code"
+    },
+
+]
+
+---
+<section class="bg-gray-100">
+    <Container>
+        <div class="flex flex-col gap-20">
+            {
+
+                code.map( ( item ) =>{
+
+                    return (
+
+                            <div class="flex flex-col gap-10">
+                                <div class="space-y-6">
+                                    <HeadingThreeExtraLargeBoldItalicCenter>We empower brand leaders to</HeadingThreeExtraLargeBoldItalicCenter>
+                                <div class="border-2 border-gray-300 border-x-0">
+                                    <HeadingTwo9xl>{ item.title }</HeadingTwo9xl>
+                                </div>
+                                </div>
+                                <ParagraphBaseUppercaseLightCenter>{ item.sub_title }</ParagraphBaseUppercaseLightCenter>
+                                <Paragraph3xlLeadingRelaxedCenter>{ item.description1 }</Paragraph3xlLeadingRelaxedCenter>
+                                <div class="flex flex-col justify-center mx-10 gap-6 mt-2">
+                                    <span class="flex justify-between">
+                                        <span class="text-sm font-light font-good_sans">{ item.description2 }</span>
+                                        <Link aria_label={ item.title } href="/work/tous-les-jours-copy/">
+                                            <span class="font-light hover:text-light_green font-good_sans">View Project →</span>
+                                        </Link>
+                                    </span>
+                                    <div class="w-7/8 aspect-[2/1]">
+                                        <PictureInternal 
+                                            alternative_text={ item.title }
+                                            source={ item.source }
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                    )
+
+                })
+
+            }
+        </div>
+    </Container>
+</section>
