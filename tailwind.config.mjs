@@ -26,6 +26,16 @@ module.exports = {
 
 			keyframes: {
 
+				"slide-in-left": {
+                    "0%": {
+                        visibility: "visible",
+                        transform: "translate3d(-100%, 0, 0)",
+                    },
+                    "100%": {
+                        transform: "translate3d(0, 0, 0)",
+                    },
+                },
+
 				"accordion-down": {
 
 					from: { height: "0" },
@@ -41,6 +51,7 @@ module.exports = {
       		},
       		animation: {
 
+				"slide-in-left": 'slide-in-left 1s ease-in-out 0.25s 1',
 				"accordion-down": "accordion-down 0.2s ease-out",
         		"accordion-up": "accordion-up 0.2s ease-out",
 
