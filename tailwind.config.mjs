@@ -43,12 +43,12 @@ module.exports = {
 				"slide-left": {
 
 					from: { transform: "translateX(0)" },
-					to: { transform: "translateX(-100%)" }
+					to: { transform: "translateX(-50%)" }
 
 				},
 				"slide-right": {
 
-					from: { transform: "translateX(-100%)" },
+					from: { transform: "translateX(-50%)" },
 					to: { transform: "translateX(0)" }
 
 				},
@@ -65,6 +65,7 @@ module.exports = {
 			colors: {
 
 				"light_green": "#78f297",
+				"dark_neutral": "#231f20",
 
 			},
 			fontFamily: {
