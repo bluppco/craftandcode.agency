@@ -1,0 +1,210 @@
+---
+
+// IMPORT ASTRO ATOMS
+import ParagraphBaseItalicWhite from "@/atoms/paragraphs/base/italic/white/index.astro" 
+import ParagraphBaseWhite from "@/atoms/paragraphs/base/white/index.astro" 
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// AWARDS ARRAY
+const award = [
+
+    {
+        description:"Top Web Design Agency 2024",
+        source:"/award-1.svg",
+    },
+    {
+        description:"Honorable Mentions (5)",
+        source:"/award-2.svg",
+    },
+    {
+        description:"Top Orlando SEO Agency",
+        source:"/award-1.svg",
+    },
+    {
+        description:"Partner Certified",
+        source:"/award-3.png",
+    },
+    {
+        description:"Top Digital Agency 2023",
+        source:"/award-1.svg",
+    },
+    {
+        description:"Most Popular Site",
+        source:"/award-4.svg",
+    },
+
+]
+
+// CLIENTS ARRAY
+const clients = [
+
+    {
+        source:"/Client-1.svg",
+    },
+    {
+        source:"/Client-2.svg",
+    },
+    {
+        source:"/Client-3.svg",
+    },
+    {
+        source:"/Client-4.svg",
+    },
+    {
+        source:"/Client-5.svg",
+    },
+    {
+        source:"/Client-6.svg",
+    },
+    {
+        source:"/Client-7.svg",
+    },
+    
+
+]
+
+// HARDCODED DATA
+const data ={
+
+    description:"Notable brands we’ve worked with",
+    sub_title1:"{ Awards & Recognition }",
+    sub_title2:"{ Featured Client }"
+
+}
+
+---
+<section class="bg-black pt-10 pb-20 hidden md:block">
+    <div class="ml-20 w-72 xl:text-96">
+        <span class="text-2xl xl:text-3xl text-white leading-relaxed font-good_sans">Oh no! These fell <span class="text-2xl xl:text-3xl text-white font-semibold italic font-gyst_variable">right</span> out of our pockets. Nothing to see <span class="text-2xl xl:text-3xl text-white font-semibold italic font-gyst_variable">here!</span></span>
+    </div>
+    <div class="flex gap-10 justify-center xl:justify-evenly xl:mx-20 my-20">
+        <div class="w-20 xl:w-32">
+            <ParagraphBaseItalicWhite>{ data.sub_title1 }</ParagraphBaseItalicWhite>
+        </div>
+        <div class="grid grid-cols-3 gap-6">
+            {  
+    
+                award.map( ( item ,index ) =>{
+    
+                    if( index == 1 || index == 5 ){
+    
+                        return (
+    
+                            <div class="flex">
+                                <div class="h-10 aspect-[3/4]">
+                                    <PictureInternal 
+                                        alternative_text=""
+                                        source="/svgexport-18.svg"
+                                    />
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="h-4 aspect-[13/2]">
+                                        <PictureInternal 
+                                            alternative_text=""
+                                            source={ item.source }
+                                        />
+                                    </div>
+                                    <div class="w-20 mx-2">
+                                        <p class="text-white text-xs text-center font-good_sans font-bold">{ item.description }</p>
+                                    </div>
+                                </div>
+                                <div class="h-10 aspect-[3/4]">
+                                    <PictureInternal 
+                                        alternative_text=""
+                                        source="/svgexport-19.svg"
+                                    />
+                                </div>
+                            </div>
+    
+                        )
+    
+                    }else {
+    
+                        return (
+    
+                            <div class="flex">
+                                <div class="h-10 aspect-[3/4]">
+                                    <PictureInternal 
+                                        alternative_text=""
+                                        source="/svgexport-18.svg"
+                                    />
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="h-6 aspect-[7/2]">
+                                        <PictureInternal 
+                                            alternative_text=""
+                                            source={ item.source }
+                                        />
+                                    </div>
+                                    <div class="w-20 mx-2">
+                                        <p class="text-white text-xs text-center font-good_sans font-bold">{ item.description }</p>
+                                    </div>
+                                </div>
+                                <div class="h-10 aspect-[3/4]">
+                                    <PictureInternal 
+                                        alternative_text=""
+                                        source="/svgexport-19.svg"
+                                    />
+                                </div>
+                            </div>
+    
+                        )
+    
+                    }
+    
+                })
+    
+            }
+        </div>
+    </div>
+    <div class="space-y-5 ml-40 mb-20">
+        <ParagraphBaseItalicWhite>{ data.sub_title2 }</ParagraphBaseItalicWhite>
+        <div class="w-24">
+            <ParagraphBaseWhite>{ data.description }</ParagraphBaseWhite>
+        </div>
+    </div>
+    <div class="flex gap-10 overflow-hidden mx-20">
+        <div class="flex gap-10 animate-loop-scroll">
+            {
+
+                clients.map( ( item ) =>{
+
+                    return (
+
+                            <div class="size-28">
+                                <PictureInternal 
+                                    alternative_text=""
+                                    source={ item.source }
+                                />
+                            </div>
+
+                    ) 
+
+                })
+
+            }
+        </div>
+        <div class="inline-block">
+            <div class="flex gap-10 animate-loop-scroll">
+                {
+
+                    clients.map( ( item ) =>{
+    
+                        return (
+    
+                                <div class="size-28">
+                                    <PictureInternal 
+                                        alternative_text=""
+                                        source={ item.source }
+                                    />
+                                </div>
+    
+                        ) 
+    
+                    })
+    
+                }
+            </div>
+        </div>
+    </div>
+</section>
