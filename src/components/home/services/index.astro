@@ -1,0 +1,79 @@
+---
+
+//IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingOneLargeBoldItalic from "@/atoms/headings/one/lg/bold/italic/index.astro"
+import HeadingThree7xlLight from "@/atoms/headings/three/7xl/light/index.astro"
+import Paragraph2xlLeadingSnug from "@/atoms/paragraphs/2xl/leading-snug/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// SERVICES ARRAY
+const services = [
+
+    {
+        service:"Branding",
+        source:"/services-1.gif"
+    },
+    {
+        service:"Websites",
+        source:"/services-2.gif"
+    },
+    {
+        service:"SEO",
+        source:"/services-3.webp"
+    },
+    {
+        service:"Pay-Per-Click",
+        source:"/services-4.webp"
+    },
+
+]
+
+// HARDCODED DATA
+const data = {
+
+    description:"We’re an Orlando digital marketing agency with expertise and passion for our craft, and we’re on a mission to help brands conquer their competitors. This is how we do it:",
+    title:"{Our Orlando Digital Marketing Services}"
+
+}
+
+---
+<section class="bg-gray-100 py-20">
+    <Container>
+        <div class="flex flex-col md:flex-row gap-20 md:gap-10">
+            <div class="space-y-10 pt-10 md:w-80">
+                <HeadingOneLargeBoldItalic>{ data.title }</HeadingOneLargeBoldItalic>
+                <div>
+                    <Paragraph2xlLeadingSnug>{ data.description }</Paragraph2xlLeadingSnug>
+                </div>
+            </div>
+            <div>
+                {
+                
+                    services.map( ( item ) =>{
+
+                        return (
+
+                                <div class="border-b-2 border-black w-full py-10 mr-40 md:h-40">
+                                    <div class="space-y-2 md:flex gap-5 group items-center cursor-pointer">
+                                        <div class="size-24 rounded-2xl overflow-hidden invisible group-hover:visible  md:hidden md:group-hover:block group-hover:animate-slide-in-left">
+                                            <PictureInternal 
+                                                alternative_text={ item.service }
+                                                source={ item.source }
+                                            />
+                                        </div>
+                                        <HeadingThree7xlLight>{ item.service }</HeadingThree7xlLight>
+                                    </div>
+                                </div>
+
+                        )
+
+                    })
+
+                }
+            </div>
+        </div>
+    </Container>
+</section>
